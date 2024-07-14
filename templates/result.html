@@ -1,0 +1,25 @@
+{% if error %}
+    <p class="error">{{ error }}</p>
+{% else %}
+    <div class="card2">
+        <div class="image-box">
+            <img src="data:image/png;base64,{{ image }}" alt="Processed Image" id="resultImage">
+        </div>
+        <p style="align-items: center;">
+            <b id="imageStatus">
+                {% if action == 'detect' %}
+                    {% if is_pixelated %}
+                        Pixelated Image Detected
+                    {% else %}
+                        Non-Pixelated Image
+                    {% endif %}
+                {% else %}
+                    Pixelation Removed
+                {% endif %}
+            </b>
+        </p>
+        <div class="download-container">
+            <button class="download-btn" id="download">Download</button>
+        </div>
+    </div>
+{% endif %}

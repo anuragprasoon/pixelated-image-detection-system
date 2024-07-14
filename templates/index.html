@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixelated Image Detection & Remover</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <img src="{{ url_for('static', filename='thunder.svg') }}" alt="thunder">
+        <div>
+            <h1>Pixelated Image</h1>
+            <h1>Detection & Remover</h1>
+            <p>by Team Stellar AI</p>
+        </div>
+        <img src="{{ url_for('static', filename='thunder.svg') }}" alt="thunder">
+    </div>
+    <div class="mainContainer">
+        <div class="container" id="uploadContainer">
+            <div class="upload-box" id="uploadBox">
+                <img src="{{ url_for('static', filename='upload.svg') }}" alt="Upload Icon" id="uploadIcon">
+            </div>
+            <p><b>Upload your image</b> to detect and enhance its quality. If your image is pixelated, our <b>AI</b> will regenerate it for a clearer, sharper result.</p>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" id="fileInput" name="file" accept="image/*">
+                <button type="button" class="submit-button" id="submitButton">Submit</button>
+                <button type="button" class="submit-button" id="removePixelationButton" disabled>Remove Pixelation</button>
+            </form>
+        </div>
+        <div id="resultContainer"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
